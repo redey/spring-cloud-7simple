@@ -1,4 +1,7 @@
+
 package com.dady.cloud.server.controller;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,5 +24,13 @@ public class UserController {
 	@ResponseBody
 	public User getUserByName(@PathVariable String userName) {
 		return userService.findUserByName(userName);
+	}
+	
+
+	@RequestMapping(value = "/getAllUsers", method = RequestMethod.GET)
+	@ResponseBody
+	public List<User> getAllUsers() {
+		System.out.println("getAllUsers!!!");
+		return userService.getAllUsers();
 	}
 }

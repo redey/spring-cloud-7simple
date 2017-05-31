@@ -1,0 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8769
+spring:
+  application:
+    name: cloud-zuul-server
+zuul:
+  routes:
+    api-a:
+      path: /user/getAllUsers/**
+      serviceId: cloud-simple-service
+    api-b:
+      path: /getAllUsers/**
+      serviceId: cloud-simple-ui

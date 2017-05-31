@@ -1,5 +1,7 @@
 package com.dady.cloud.server.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,5 +13,9 @@ public class UserService {
 	UserDao userDao;
 	public User findUserByName(String userName){
 		return userDao.findUserByName(userName);
+	}
+	public List<User> getAllUsers() {
+		// TODO Auto-generated method stub
+		return userDao.findAllUsers();
 	}
 }
